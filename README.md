@@ -278,19 +278,47 @@ public function tags(){
 
 ```
 
-># laravel-many-to-many
+# laravel-api
 
-### Descrizione:
+### Descrizione
 
-Continuiamo a lavorare sul codice dei giorni scorsi, ma in una nuova repo e aggiungiamo una nuova entità Technology. Questa entità rappresenta le tecnologie utilizzate ed è in relazione many to many con i progetti.
-I task da svolgere sono diversi, ma alcuni di essi sono un ripasso di ciò che abbiamo fatto nelle lezioni dei giorni scorsi:
-- creare la migration per la tabella technologies
-- creare il model Technology
-- creare la migration per la tabella pivot project_technology
-- aggiungere ai model Technology e Project i metodi per definire la relazione many to many
-- visualizzare nella pagina di dettaglio di un progetto le tecnologie utilizzate, se presenti
-- permettere all’utente di associare le tecnologie nella pagina di creazione e modifica di un progetto
-- gestire il salvataggio dell’associazione progetto-tecnologie con opportune regole di validazione
-### Bonus :
-- Creare il seeder per il model Technology.
-- Aggiungere le operazioni CRUD per il model Technology, in modo da gestire le tecnologie utilizzate nei progetti direttamente dal pannello di amministrazione.
+Continuiamo a lavorare sul codice dei giorni scorsi, ma in una nuova repo.
+L’esercizio di oggi è suddiviso in milestone ed è importante che ne seguiate l’ordine.
+#### Milestone 1
+Aggiungiamo al nostro progetto Laravel una nuovo Api/ProjectController. Questo controller risponderà a delle richieste via API e si occuperà di restituire la lista dei progetti presenti nel database in formato json.
+#### Milestone 2
+Testiamo la chiamata API tramite browser e assicuriamoci di ricevere i dati correttamente.
+#### Milestone 3
+Progettiamo il nostro front-office (aiutandoci con figma) per farci un'idea di quali end-point API avremo bisogno
+### Bonus
+- Se volete preparate una nuova repo (nome repo: vite-boolfolio)
+e iniziamo ad occuparci della parte front-office della nostra applicazione facendo qualche test: 
+    - creiamo un nuovo progetto Vue 3 con Vite e installiamo axios.
+
+- Colleghiamo questo progetto alla repo separata creata.
+- Nel componente principale della nostra Vue App facciamo una chiamata API all’endpoint costruito nel progetto Laravel (milestone 1) e recuperiamo tutti i progetti dal nostro back-end.
+- Stampiamo in console i risultati e verifichiamo di ricevere i dati correttamente.
+
+> ## *Spolverata di vue+vite:*
+> 1. Crea repo su git (senza opzioni se non pubblico)
+> 2. Clonare la repo e apri la cartella su vs code e aprire terminale
+> 3. digitare: npm create vue@latest
+> 4. per creare il progetto nella directory corrente mettere solo un  punto
+> 5. nome package lo stesso della cartella poi lasciare tutto come sta
+> 6. dire si all'opzione vue router
+> 7. npm install
+> 8. npm run dev
+
+```bash
+npm install bootstrap axios @fortawesome/fontawesome-free sass
+
+# eventualmente facciamo vedere fontsource: https://fontsource.org/fonts/montserrat
+npm install @fontsource/montserrat
+
+# copiamo la cartella webfonts da fontawesome in node-modules in assets
+# inizialmente commentiamo l'importazione e l'uso del router di view dal main js
+# eliminiamo i file inutili al termine le cartelle dovrebbero essere così:
+
+npm run dev -- --port 8000
+
+```
